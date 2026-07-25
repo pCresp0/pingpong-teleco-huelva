@@ -13,6 +13,7 @@ Web para gestionar la liga interna de ping-pong de un grupo de amigos (ex-Teleco
 - **Estadísticas**: puntos totales, media por partido, mejor racha, máximo anotador, ranking de regularidad (desviación de puntos) y ranking de victorias más abultadas.
 - **Curiosidades**: datos random generados a partir de los resultados reales de la liga.
 - **Plantilla fija**: 7 jugadores predefinidos, cada uno con un emoji que le representa.
+- **Guardado protegido**: solo quien conoce la contraseña de administrador puede guardar resultados, generar playoffs o reiniciar la liga. La app nunca guarda la contraseña en claro: en el código solo vive su hash SHA-256, y la comprobación se hace en el propio navegador con la Web Crypto API.
 
 ## Jugadores
 
