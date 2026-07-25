@@ -18,6 +18,30 @@
     display:flex;height:100vh;align-items:center;justify-content:center;
     font-family:Inter,sans-serif;color:#FF6A34;font-size:14px;
   }
+  .ppth-ball{
+    font-size:26px;line-height:1;display:inline-block;
+    animation:ppth-bounce 2.6s ease-in-out infinite;
+  }
+  @keyframes ppth-bounce{
+    0%,100%{ transform: translateY(0) rotate(0deg); }
+    25%{ transform: translateY(-5px) rotate(-8deg); }
+    50%{ transform: translateY(0) rotate(0deg); }
+    75%{ transform: translateY(-2px) rotate(6deg); }
+  }
+  .ppth-fade{ animation: ppth-fadein .28s ease-out; }
+  @keyframes ppth-fadein{
+    from{ opacity:0; transform: translateY(6px); }
+    to{ opacity:1; transform: translateY(0); }
+  }
+  .ppth-dots{
+    position:absolute; inset:0; opacity:.5; pointer-events:none;
+    background-image: radial-gradient(rgba(250,246,236,0.14) 1px, transparent 1px);
+    background-size: 14px 14px;
+  }
+  @media (prefers-reduced-motion: reduce){
+    .ppth-ball{ animation:none; }
+    .ppth-fade{ animation:none; }
+  }
 </style>
 </head>
 <body>
