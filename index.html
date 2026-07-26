@@ -67,9 +67,17 @@
     background-image: radial-gradient(rgba(250,246,236,0.14) 1px, transparent 1px);
     background-size: 14px 14px;
   }
+  .ppth-noscroll{ scrollbar-width:none; -ms-overflow-style:none; }
+  .ppth-noscroll::-webkit-scrollbar{ display:none; }
+  .ppth-sheet{ animation: ppth-slideup .24s ease-out; }
+  @keyframes ppth-slideup{
+    from{ transform: translateY(100%); }
+    to{ transform: translateY(0); }
+  }
   @media (prefers-reduced-motion: reduce){
     .ppth-ball{ animation:none; }
     .ppth-fade{ animation:none; }
+    .ppth-sheet{ animation:none; }
   }
 </style>
 </head>
