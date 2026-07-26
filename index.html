@@ -38,7 +38,15 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" />
 <link rel="stylesheet" href="./styles.css" />
 <style>
-  body{margin:0;background:#FAF6EC;}
+  html{ -webkit-text-size-adjust:100%; text-size-adjust:100%; }
+  body{
+    margin:0;background:#FAF6EC;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    overscroll-behavior-y: none;
+  }
+  .ppth-sheet{ max-height:85vh; overscroll-behavior: contain; }
+  button{ -webkit-appearance:none; appearance:none; }
   ::-webkit-scrollbar{width:6px;height:6px}
   ::-webkit-scrollbar-thumb{background:#c9bfa2;border-radius:3px}
   input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{opacity:1}
@@ -73,6 +81,13 @@
   @keyframes ppth-slideup{
     from{ transform: translateY(100%); }
     to{ transform: translateY(0); }
+  }
+  /* iOS Safari: la barra de direcciones cambia de alto, así que usamos
+     unidades de viewport dinámicas donde el navegador las soporte. */
+  @supports (height: 100dvh){
+    .min-h-screen{ min-height:100dvh; }
+    #root:empty::before{ height:100dvh; }
+    .ppth-sheet{ max-height:85dvh; }
   }
   @media (prefers-reduced-motion: reduce){
     .ppth-ball{ animation:none; }
